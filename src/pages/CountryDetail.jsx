@@ -61,7 +61,7 @@ const CountryDetail = () => {
             />
           </div>
           {/* Details Section */}
-          <div className="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="w-full lg:w-1/2 grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="">
               <h1 className="text-2xl font-extrabold pb-4">
                 {selectedCountry.name.common}
@@ -94,8 +94,29 @@ const CountryDetail = () => {
                   {selectedCountry.capital?.join(", ") || "N/A"}
                 </span>
               </p>
+              <div className="pt-12 hidden sm:block">
+            <p className="font-semibold">
+              Border Countries:
+              <span className="font-normal inline-block">
+                {borderCountries.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {borderCountries.map((country) => (
+                      <span
+                        key={country}
+                        className="inline-block px-3 py-1 bg-white dark:bg-dark-element shadow-md rounded-md text-sm"
+                      >
+                        {country}
+                      </span>
+                    ))}
+                  </div>
+                ) : (
+                  <div>No border countries found</div>
+                )}
+              </span>
+            </p>
+          </div>
             </div>
-            <div>
+            <div className="">
               <p className="font-semibold">
                 Top Level Domain:
                 <span className="font-normal">{selectedCountry.tld[0]}</span>
@@ -117,27 +138,28 @@ const CountryDetail = () => {
                 </span>
               </p>
             </div>
-            <div className="col-span-2">
-              <p className="font-semibold">
-                Border Countries:
-                <span className="font-normal inline-block">
-                  {borderCountries.length > 0 ? (
-                    <div className="flex flex-wrap gap-2">
-                      {borderCountries.map((country) => (
-                        <span
-                          key={country}
-                          className="inline-block px-3 py-1 bg-white dark:bg-dark-element shadow-md rounded-md text-sm"
-                        >
-                          {country}
-                        </span>
-                      ))}
-                    </div>
-                  ) : (
-                    <div>No border countries found</div>
-                  )}
-                </span>
-              </p>
-            </div>
+          </div>
+          
+          <div className=" block lg:hidden">
+            <p className="font-semibold">
+              Border Countries:
+              <span className="font-normal inline-block">
+                {borderCountries.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {borderCountries.map((country) => (
+                      <span
+                        key={country}
+                        className="inline-block px-3 py-1 bg-white dark:bg-dark-element shadow-md rounded-md text-sm"
+                      >
+                        {country}
+                      </span>
+                    ))}
+                  </div>
+                ) : (
+                  <div>No border countries found</div>
+                )}
+              </span>
+            </p>
           </div>
         </div>
       ) : null}
