@@ -1,14 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Card = ({ flag, name, population, region, capital , link }) => {
+  const navigate = useNavigate()
+
+  const handleClick =() => {
+    navigate(link)
+  }
+  
   return (
-    <div className="p-10 ">
-    <div className="max-w-sm dark:bg-dark-blue rounded-lg overflow-hidden shadow-lg ">
+    <div className="p-10 cursor-pointer" onClick={()=>handleClick()}>
+    <div className=" dark:bg-dark-blue rounded-lg overflow-hidden shadow-lg ">
       <img className="w-full h-48 object-cover" src={flag} alt={name} />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">
-          <Link to={link}>{name}</Link>
+          <span>{name}</span>
         </div>
         <div>
             <p className="font-semibold">Population: <span className="font-normal">{population}</span></p>

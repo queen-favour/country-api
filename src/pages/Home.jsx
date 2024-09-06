@@ -4,7 +4,7 @@ import { getAllCountries } from "../redux/countriesSlice";
 import SearchFilter from "../components/SearchFilter";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
-import ThemeSwitcher from "../components/ThemeSwitcher";
+
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -29,12 +29,11 @@ const Home = () => {
    if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="light:bg-Lighter-gray h-full p-8 dark:bg-darker-blue1 dark:text-white ">
-          <ThemeSwitcher />
+    <div className="w-full light:bg-Lighter-gray h-full md:p-8 p-2 dark:bg-darker-blue1 dark:text-white ">
       <div className="justify-between  flex flex-col px-10">
         <SearchFilter />
       </div>
-      <div className="grid grid-cols-4 ">
+      <div className="grid lg:grid-cols-4 w-full md:grid-cols-2 ">
         {filteredCountries.map((country) => (
           <Card 
           key={country.cca3}
