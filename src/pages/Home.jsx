@@ -4,6 +4,7 @@ import { getAllCountries } from "../redux/countriesSlice";
 import SearchFilter from "../components/SearchFilter";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
+import Loader from "../components/Loader";
 
 
 const Home = () => {
@@ -25,12 +26,12 @@ const Home = () => {
     return matchesRegion && matchesSearchQuery;
   });
 
-  if (loading) return <div>Loading...</div>;
-   if (error) return <div>Error: {error}</div>;
+  if (loading) return <div><Loader /></div>;
+   if (error) return <div>Something went wrong: {error}</div>;
 
   return (
-    <div className="w-full light:bg-Lighter-gray h-full md:p-8 p-2 dark:bg-darker-blue1 dark:text-white ">
-      <div className="justify-between  flex flex-col px-10">
+    <div className="w-full bg-Lighter-gray h-full md:p-8 p-2 dark:bg-darker-blue1 dark:text-white ">
+      <div className="justify-between w-full  flex flex-col px-10">
         <SearchFilter />
       </div>
       <div className="grid lg:grid-cols-4 w-full md:grid-cols-2 ">

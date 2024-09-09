@@ -15,17 +15,21 @@ const SearchFilter = () => {
   };
 
   return (
-    <div className=" justify-between flex py-3">
-      <input
-      className="p-4 shadow-md dark:bg-dark-blue rounded-md"
-        type="text"
-        value={searchQuery}
-        onChange={handleSearchChange}
-        placeholder="Search by country name..."
-      />
+    <div className=" justify-between flex py-3 ">
+        <input
+          className="p-4 pr-48 shadow-md dark:bg-dark-blue rounded-md"
+          type="text"
+          value={searchQuery}
+          onChange={handleSearchChange}
+          placeholder="Search by country name..."
+        />
 
-      <select className="p-4 shadow-md rounded-md dark:bg-dark-blue" value={region} onChange={handleRegionChange}>
-        <option value="all">Filter by Regions</option>
+      <select
+        className="p-4 shadow-md rounded-md dark:bg-dark-blue"
+        value={region}
+        onChange={handleRegionChange}
+      >
+        <option value="all" disabled hidden>Filter by Regions</option>
         <option value="Africa">Africa</option>
         <option value="America">America</option>
         <option value="Asia">Asia</option>

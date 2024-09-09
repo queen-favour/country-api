@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { getCountryById } from "../redux/countriesSlice";
+import Loader from "../components/Loader";
 
 const CountryDetail = () => {
   const { id } = useParams();
@@ -38,8 +39,13 @@ const CountryDetail = () => {
     }
   }, [selectedCountry?.borders]);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (loading)
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
+  if (error) return <div>Something went wrong: {error}</div>;
 
   return (
     <div className="bg-Lighter-gray dark:bg-dark-blue min-h-screen px-6 sm:px-12 lg:px-16 py-8">
@@ -95,26 +101,26 @@ const CountryDetail = () => {
                 </span>
               </p>
               <div className="pt-12 hidden sm:block">
-            <p className="font-semibold">
-              Border Countries:
-              <span className="font-normal inline-block">
-                {borderCountries.length > 0 ? (
-                  <div className="flex flex-wrap gap-2">
-                    {borderCountries.map((country) => (
-                      <span
-                        key={country}
-                        className="inline-block px-3 py-1 bg-white dark:bg-dark-element shadow-md rounded-md text-sm"
-                      >
-                        {country}
-                      </span>
-                    ))}
-                  </div>
-                ) : (
-                  <div>No border countries found</div>
-                )}
-              </span>
-            </p>
-          </div>
+                <p className="font-semibold">
+                  Border Countries:
+                  <span className="font-normal inline-block">
+                    {borderCountries.length > 0 ? (
+                      <div className="flex flex-wrap gap-2">
+                        {borderCountries.map((country) => (
+                          <span
+                            key={country}
+                            className="inline-block px-3 py-1 bg-white dark:bg-dark-element shadow-md rounded-md text-sm"
+                          >
+                            {country}
+                          </span>
+                        ))}
+                      </div>
+                    ) : (
+                      <div>No border countries found</div>
+                    )}
+                  </span>
+                </p>
+              </div>
             </div>
             <div className="">
               <p className="font-semibold">
@@ -139,7 +145,7 @@ const CountryDetail = () => {
               </p>
             </div>
           </div>
-          
+
           <div className=" block lg:hidden">
             <p className="font-semibold">
               Border Countries:
