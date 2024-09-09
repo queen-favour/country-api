@@ -31,7 +31,7 @@ const SearchFilter = () => {
   };
 
   return (
-    <div className="flex flex-col gap-5 w-fit  lg:flex-row justify-between py-3">
+    <div className="flex flex-col gap-5 w-full lg:flex-row justify-between py-3">
       {/* Search Input */}
       <input
         className="p-4 pr-2 lg:pr-48 shadow-md dark:bg-dark-blue rounded-md"
@@ -42,7 +42,7 @@ const SearchFilter = () => {
       />
 
       {/* Custom Dropdown */}
-      <div className="relative w-64">
+      <div className="relative md:w-64">
         {" "}
         {/* Set a fixed width for the dropdown */}
         <button
