@@ -68,7 +68,7 @@ const CountryDetail = () => {
           </div>
           {/* Details Section */}
           <div className="w-full lg:w-1/2 grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="">
+            <div className="flex flex-col gap-2">
               <h1 className="text-2xl font-extrabold pb-4">
                 {selectedCountry.name.common}
               </h1>
@@ -122,7 +122,7 @@ const CountryDetail = () => {
                 </p>
               </div>
             </div>
-            <div className="">
+            <div className="flex flex-col gap-2">
               <p className="font-semibold">
                 Top Level Domain:
                 <span className="font-normal">{selectedCountry.tld[0]}</span>
@@ -146,9 +146,9 @@ const CountryDetail = () => {
             </div>
           </div>
 
-          <div className=" block lg:hidden">
+          <div className="block lg:hidden">
             <p className="font-semibold">
-              Border Countries:
+              Border Countries: 
               <span className="font-normal inline-block">
                 {borderCountries.length > 0 ? (
                   <div className="flex flex-wrap gap-2">
