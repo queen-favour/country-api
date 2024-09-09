@@ -48,9 +48,9 @@ const CountryDetail = () => {
   if (error) return <div>Something went wrong... {error}</div>;
 
   return (
-    <div className="bg-Lighter-gray dark:bg-dark-blue min-h-screen px-6 sm:px-12 lg:px-16 py-8">
+    <div className="bg-Lighter-gray dark:bg-darker-blue1 dark:text-white min-h-screen px-6 sm:px-12 lg:px-16 py-8">
       <button
-        className="flex items-center gap-2 rounded-lg shadow-md dark:shadow-lg bg-white dark:bg-dark-element px-6 py-2 mb-8"
+        className="flex  items-center gap-2 rounded-lg shadow-md dark:shadow-lg bg-white dark:bg-dark-blue px-6 py-2 mb-8"
         onClick={() => navigate(-1)}
       >
         <FaArrowLeftLong className="text-lg" />
@@ -109,7 +109,7 @@ const CountryDetail = () => {
                         {borderCountries.map((country) => (
                           <span
                             key={country}
-                            className="inline-block px-3 py-1 bg-white dark:bg-dark-element shadow-md rounded-md text-sm"
+                            className="inline-block px-3 py-1 bg-white dark:bg-dark-blue dark:text-white shadow-md rounded-md text-sm"
                           >
                             {country}
                           </span>

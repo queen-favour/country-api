@@ -31,7 +31,7 @@ const SearchFilter = () => {
       >
         <option value="all" disabled hidden>Filter by Regions</option>
         <option value="Africa">Africa</option>
-        <option value="America">America</option>
+        <option value="Americas">America</option>
         <option value="Asia">Asia</option>
         <option value="Europe">Europe</option>
         <option value="Oceania">Oceania</option>
