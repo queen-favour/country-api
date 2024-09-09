@@ -45,7 +45,7 @@ const CountryDetail = () => {
         <Loader />
       </div>
     );
-  if (error) return <div>Something went wrong: {error}</div>;
+  if (error) return <div>Something went wrong... {error}</div>;
 
   return (
     <div className="bg-Lighter-gray dark:bg-dark-blue min-h-screen px-6 sm:px-12 lg:px-16 py-8">
