@@ -52,7 +52,7 @@ const SearchFilter = () => {
           <span>
             {selectedRegion ? selectedRegion.displayName : "Filter by Region"}
           </span>
-          <FaChevronDown className="ml-2" /> {/* Dropdown icon */}
+          <FaChevronDown className={`ml-2 ${isDropdownOpen ? 'rotate-180' : "rotate-0"}`}  /> 
         </button>
         {isDropdownOpen && (
           <ul className="absolute top-full left-0 mt-2 w-full bg-white dark:bg-dark-blue shadow-md rounded-md z-10">
